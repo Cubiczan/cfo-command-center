@@ -1,0 +1,109 @@
+{
+  "title": "cfo-command-center",
+  "tables": [
+    {
+      "id": 0,
+      "name": "entity",
+      "x": 80,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "entity_id", "type": "INTEGER", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": true, "comment": ""},
+        {"id": 1, "name": "name", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 2, "name": "parent_entity_id", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 3, "name": "legal_name", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "status", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "created_at", "type": "TIMESTAMP", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#7d9dff"
+    },
+    {
+      "id": 1,
+      "name": "connector_config",
+      "x": 420,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "connector_id", "type": "INTEGER", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": true, "comment": ""},
+        {"id": 1, "name": "entity_id", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": true, "increment": false, "comment": ""},
+        {"id": 2, "name": "connector_name", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 3, "name": "connector_type", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "source_system", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "destination_database", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 6, "name": "sync_frequency", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 7, "name": "enabled", "type": "BOOLEAN", "default": false, "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#ffe159"
+    },
+    {
+      "id": 2,
+      "name": "sync_result",
+      "x": 760,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "result_id", "type": "INTEGER", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": true, "comment": ""},
+        {"id": 1, "name": "connector_id", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": true, "increment": false, "comment": ""},
+        {"id": 2, "name": "run_at", "type": "TIMESTAMP", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 3, "name": "status", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "records_processed", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "records_updated", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 6, "name": "records_failed", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 7, "name": "message", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#9be7a2"
+    },
+    {
+      "id": 3,
+      "name": "sync_record",
+      "x": 1100,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "record_id", "type": "INTEGER", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": true, "comment": ""},
+        {"id": 1, "name": "connector_id", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": true, "increment": false, "comment": ""},
+        {"id": 2, "name": "entity_id", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": true, "increment": false, "comment": ""},
+        {"id": 3, "name": "external_id", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "action", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "outcome", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 6, "name": "payload_hash", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 7, "name": "synced_at", "type": "TIMESTAMP", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#ffaf7d"
+    },
+    {
+      "id": 4,
+      "name": "database_target",
+      "x": 1440,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "id", "type": "INTEGER", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": true, "comment": ""},
+        {"id": 1, "name": "entity_id", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": true, "increment": false, "comment": ""},
+        {"id": 2, "name": "dataset_name", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 3, "name": "notion_database_id", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "primary_metric", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "last_sync_at", "type": "TIMESTAMP", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#ff7d7d"
+    }
+  ],
+  "relationships": [
+    {"startTableId": 0, "startFieldId": 2, "endTableId": 0, "endFieldId": 0, "name": "entity_parent_entity_id_fk", "cardinality": "many_to_one", "updateConstraint": "No action", "deleteConstraint": "No action", "id": 0},
+    {"startTableId": 1, "startFieldId": 1, "endTableId": 0, "endFieldId": 0, "name": "connector_config_entity_id_fk", "cardinality": "many_to_one", "updateConstraint": "No action", "deleteConstraint": "No action", "id": 1},
+    {"startTableId": 2, "startFieldId": 1, "endTableId": 1, "endFieldId": 0, "name": "sync_result_connector_id_fk", "cardinality": "many_to_one", "updateConstraint": "No action", "deleteConstraint": "No action", "id": 2},
+    {"startTableId": 3, "startFieldId": 1, "endTableId": 1, "endFieldId": 0, "name": "sync_record_connector_id_fk", "cardinality": "many_to_one", "updateConstraint": "No action", "deleteConstraint": "No action", "id": 3},
+    {"startTableId": 3, "startFieldId": 2, "endTableId": 0, "endFieldId": 0, "name": "sync_record_entity_id_fk", "cardinality": "many_to_one", "updateConstraint": "No action", "deleteConstraint": "No action", "id": 4},
+    {"startTableId": 4, "startFieldId": 1, "endTableId": 0, "endFieldId": 0, "name": "database_target_entity_id_fk", "cardinality": "many_to_one", "updateConstraint": "No action", "deleteConstraint": "No action", "id": 5}
+  ],
+  "notes": [],
+  "subjectAreas": [],
+  "types": [],
+  "enums": [],
+  "views": []
+}
